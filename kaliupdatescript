@@ -1,44 +1,46 @@
-#!/bin/bash
-
 # ENUMERATION AND SCANNING TOOLS
 
 # AutoRecon from Tiberius
-git clone https://github.com/Tib3rius/AutoRecon 
+git clone https://github.com/Tib3rius/AutoRecon
 
 # enum4linux-ng git clone
-git clone https://github.com/cddmp/enum4linux-ng
+git clone https://github.com/cddmp/enum4linux-ng 
 
 # SMB Crawler - ManSpider
-git clone https://github.com/blacklanternsecurity/MANSPIDER 
+git clone https://github.com/blacklanternsecurity/MANSPIDER
 
 # kerbrute tool - kerberos pre-auth bruteforcing
 wget https://github.com/ropnop/kerbrute/releases/download/v1.0.3/kerbrute_linux_amd64 
 
 # Sharphound for Bloodhound
 wget https://github.com/BloodHoundAD/SharpHound/releases/download/v1.1.1/SharpHound-v1.1.1.zip 
+wget https://github.com/BloodHoundAD/SharpHound/releases/download/v2.3.0/SharpHound-v2.3.0.zip 
 
 # nmap binary download - ONLY USE FOR CTFs and to put on the jump box of a network
-wget https://github.com/andrew-d/static-binaries/raw/master/binaries/linux/x86_64/nmap 
+wget https://github.com/andrew-d/static-binaries/raw/master/binaries/linux/x86_64/nmap
 
-# AD and Windows Enumeration
-wget https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/master/Recon/PowerView.ps1 
-wget https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/master/Privesc/PowerUp.ps1 
+# AD and Windows Enumeration - Powerview
+wget https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/master/Recon/PowerView.ps1
+wget https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/master/Privesc/PowerUp.ps1
+
+# Sharpview - dotnet implementation of Powerview
+wget https://github.com/tevora-threat/SharpView/raw/master/Compiled/SharpView.exe
 
 # Rustscan
-wget https://github.com/RustScan/RustScan/releases/download/2.0.1/rustscan_2.0.1_amd64.deb 
+wget https://github.com/RustScan/RustScan/releases/download/2.0.1/rustscan_2.0.1_amd64.deb
 
 # Octopii
-git clone https://github.com/redhuntlabs/Octopii /
+git clone https://github.com/redhuntlabs/Octopii 
 
 # Really good API fuzzer 
-wget https://github.com/assetnote/kiterunner/releases/download/v1.0.2/kiterunner_1.0.2_linux_amd64.tar.gz 
+wget https://github.com/assetnote/kiterunner/releases/download/v1.0.2/kiterunner_1.0.2_linux_amd64.tar.gz
 
 # Nuclei Templates
 git clone https://github.com/AggressiveUser/AllForOne 
-git clone https://github.com/xm1k3/cent 
+git clone https://github.com/xm1k3/cent
 
 # GAP Burp Extension
-git clone https://github.com/xnl-h4ck3r/GAP-Burp-Extension
+git clone https://github.com/xnl-h4ck3r/GAP-Burp-Extension 
 
 # JS Analysis Tool
 git clone https://github.com/LewisArdern/metasecjs 
@@ -47,7 +49,9 @@ git clone https://github.com/LewisArdern/metasecjs
 # Run the following commands to test:
 # function jsurls { jsluice urls <(curl -sk "$1"); }
 # jsurls {link to js file}
-git clone https://github.com/BishopFox/jsluice
+git clone https://github.com/BishopFox/jsluice /home/kali/tools/jsluice
+
+
 
 # PAYLOADS AND REVERSE SHELLS
 
@@ -55,8 +59,14 @@ git clone https://github.com/BishopFox/jsluice
 git clone https://github.com/glowbase/macro_reverse_shell 
 
 # Windows PHP Reverse Shell Script 
-wget https://raw.githubusercontent.com/sradigan/php_reverse_shell_windows/master/shell.php/windows_php_shell.php
-wget https://raw.githubusercontent.com/sradigan/php_reverse_shell_windows/master/shell.php /windows_php_shell.php
+wget https://raw.githubusercontent.com/sradigan/php_reverse_shell_windows/master/shell.php 
+wget https://raw.githubusercontent.com/sradigan/php_reverse_shell_windows/master/shell.php 
+
+# Follina exploit (malicious MS Word Macro) - https://owasp.org/www-community/vulnerabilities/follina
+git clone https://github.com/chvancooten/follina.py 
+
+# OpenSSH binary for windows x64 - good for persistence and getting a stable shell on windows machine
+wget https://github.com/PowerShell/Win32-OpenSSH/releases/download/v9.5.0.0p1-Beta/OpenSSH-Win64.zip 
 
 # WEB CRAWLERS
 
@@ -64,33 +74,31 @@ wget https://raw.githubusercontent.com/sradigan/php_reverse_shell_windows/master
 git clone https://github.com/binux/pyspider 
 
 # katana crawler binary
-wget https://github.com/projectdiscovery/katana/releases/download/v1.0.4/katana_1.0.4_linux_amd64.zip 
+wget https://github.com/projectdiscovery/katana/releases/download/v1.0.4/katana_1.0.4_linux_amd64.zip
 
 # Hakrawler
 git clone https://github.com/hakluke/hakrawler 
 
-
-
 # WEB AND CLOUD RECON
 
 # sub404 download to check for subdomain takeovers
-git clone https://github.com/r3curs1v3-pr0xy/sub404 
+git clone https://github.com/r3curs1v3-pr0xy/sub404
 
 # subfinder - fast subdomain enumeration tool - faster than Amass
-wget https://github.com/projectdiscovery/subfinder/releases/download/v2.6.3/subfinder_2.6.3_linux_amd64.zip 
+wget https://github.com/projectdiscovery/subfinder/releases/download/v2.6.3/subfinder_2.6.3_linux_amd64.zip
 
 # AI subdomain recon
 git clone https://github.com/jhaddix/SubreconGPT 
 
 # Subdomain enumeration bruteforce
-git clone https://github.com/d3mondev/puredns 
+git clone https://github.com/d3mondev/puredns
 
 #lazyS3 download
 git clone https://github.com/nahamsec/lazys3 
 
 # Recon Frameworks
 git clone https://github.com/six2dez/reconftw 
-git clone https://github.com/yogeshojha/rengine 
+git clone https://github.com/yogeshojha/rengine
 
 # Automated OSINT Recon Frameworks
 git clone https://github.com/Dheerajmadhukar/karma_v2 
@@ -103,13 +111,13 @@ git clone https://github.com/R-s0n/ars0n-framework
 git clone https://github.com/expl0itabl3/check_mdi 
 
 # Shodan Scanner
-git clone https://github.com/s0md3v/Smap 
+git clone https://github.com/s0md3v/Smap
 
 # Cloud Recon 
 git clone https://github.com/g0ldencybersec/CloudRecon 
 
 # All cloud ranges
-wget https://raw.githubusercontent.com/lord-alfred/ipranges/main/all/ipv4_merged.txt 
+wget https://raw.githubusercontent.com/lord-alfred/ipranges/main/all/ipv4_merged.txt
 
 # Github Enumeration Tools
 git clone https://github.com/gwen001/github-regexp 
@@ -118,11 +126,11 @@ git clone https://github.com/gwen001/github-regexp
 git clone https://github.com/gwen001/github-subdomains
 
 # Favicon Analysis
-git clone https://github.com/devanshbatham/FavFreak 
+git clone https://github.com/devanshbatham/FavFreak
 git clone https://github.com/pielco11/fav-up 
 
 # JHaddix - Bounty Catch Script:
-wget https://gist.githubusercontent.com/jhaddix/91035a01168902e8130a8e1bb383ae1e/raw/13bf7bafd2b3d62a2bc9ef354b38e1b589ef46be/bountycatch.py 
+wget https://gist.githubusercontent.com/jhaddix/91035a01168902e8130a8e1bb383ae1e/raw/13bf7bafd2b3d62a2bc9ef354b38e1b589ef46be/bountycatch.py
 
 # JHaddix - 2Recon Script:
 wget https://gist.githubusercontent.com/jhaddix/676e25ec0ee289406d7bece1ab074b50/raw/0c148efd9c8fc161f6a358669e301b410beb5f0a/2recon.py 
@@ -138,7 +146,7 @@ wget https://gist.githubusercontent.com/jhaddix/b80ea67d85c13206125806f0828f4d10
 git clone https://github.com/six2dez/OneListForAll 
 
 # Docker Inspector Tool
-git clone https://github.com/wagoodman/dive 
+git clone https://github.com/wagoodman/dive
 
 # Get All URLs - Archive Pages Enumeration
 git clone https://github.com/lc/gau 
@@ -147,20 +155,22 @@ git clone https://github.com/lc/gau
 git clone https://github.com/xnl-h4ck3r/waymore 
 
 # APKLeaks - Grab paths and routes from a mobile app and use on web app to test for vulnerable API routes or paths
-git clone https://github.com/dwisiswant0/apkleaks
+git clone https://github.com/dwisiswant0/apkleaks 
 
 # DNS Resolver IP List
-git clone https://github.com/trickest/resolvers 
+git clone https://github.com/trickest/resolvers
 
 # AI Screenshot Scanning tool - use after eyewitness
 git clone https://github.com/BishopFox/eyeballer 
 
+# OSINT on social media accounts
+git clone https://github.com/piaolin/DetectDee 
 
 
 # WEB EXPLOIT TOOLS
 
 # xsstrike tool download
-git clone https://github.com/s0md3v/XSStrike 
+git clone https://github.com/s0md3v/XSStrike
 
 # MSOL Spray - o365 password spray
 git clone https://github.com/dafthack/MSOLSpray 
@@ -169,13 +179,16 @@ git clone https://github.com/dafthack/MSOLSpray
 git clone https://github.com/wireghoul/dotdotpwn 
 
 # Automated SQLi Tool
-git clone https://github.com/r0oth3x49/ghauri 
+git clone https://github.com/r0oth3x49/ghauri
 
 # SSRF common payloads - cloud metadata
 wget https://gist.githubusercontent.com/jhaddix/78cece26c91c6263653f31ba453e273b/raw/a4869d58a5ce337d1465c2d1b29777b9eecd371f/cloud_metadata.txt 
 
 # XXE payload list
-git clone https://github.com/payloadbox/xxe-injection-payload-list
+git clone https://github.com/payloadbox/xxe-injection-payload-list 
+
+# Automated XXE injection tool for direct and oob attacks
+git clone https://github.com/enjoiz/XXEinjector
 
 # Phishing Tools
 git clone https://github.com/fin3ss3g0d/evilgophish 
@@ -185,7 +198,7 @@ git clone https://github.com/kgretzky/evilginx2
 
 # PRIVESC TOOLS
 # PwnKit git clone
-git clone https://github.com/ly4k/PwnKit 
+git clone https://github.com/ly4k/PwnKit
 
 # Refer to this link for use of all potatoes: https://jlajara.gitlab.io/Potatoes_Windows_Privesc
 
@@ -197,44 +210,48 @@ wget https://github.com/foxglovesec/Potato/raw/master/source/Potato/Potato/bin/R
 wget https://github.com/breenmachine/RottenPotatoNG/blob/master/RottenPotatoEXE/x64/Release/MSFRottenPotato.exe 
 
 # god potato binary - new exploit
-wget https://github.com/BeichenDream/GodPotato/releases/download/V1.20/GodPotato-NET4.exe 
+wget https://github.com/BeichenDream/GodPotato/releases/download/V1.20/GodPotato-NET4.exe
 
 # Potatoes to compile
 # Note: this is HOT POTATO - there is a binary in the bin folder you can use
-git clone https://github.com/foxglovesec/Potato /home/kali/compile/Potato
+git clone https://github.com/foxglovesec/Potato 
 
 # Note: This is ROTTEN POTATO - binary is in x64/releases folder
-git clone https://github.com/breenmachine/RottenPotatoNG /home/kali/compile/RottenPotatoNG
+git clone https://github.com/breenmachine/RottenPotatoNG 
 
 # Note: This is the repo for Juicy Potato
-git clone https://github.com/ohpe/juicy-potato /home/kali/compile/juicy-potato
+git clone https://github.com/ohpe/juicy-potato 
 
 # Note: Sweet Potato repo
-git clone https://github.com/CCob/SweetPotato /home/kali/compile/SweetPotato
+git clone https://github.com/CCob/SweetPotato 
 
 # Note: Generic Potato repo
-git clone https://github.com/micahvandeusen/GenericPotato /home/kali/compile/GenericPotato
+git clone https://github.com/micahvandeusen/GenericPotato 
 
 # PrintNightmare Script
 wget https://raw.githubusercontent.com/cube0x0/CVE-2021-1675/main/CVE-2021-1675.py
 
 # PrintSpoofer
 wget https://github.com/itm4n/PrintSpoofer/releases/download/v1.0/PrintSpoofer32.exe 
-wget https://github.com/itm4n/PrintSpoofer/releases/download/v1.0/PrintSpoofer64.exe 
+wget https://github.com/itm4n/PrintSpoofer/releases/download/v1.0/PrintSpoofer64.exe
 
 # Mimikatz - old and new
 wget https://github.com/ParrotSec/mimikatz/raw/master/x64/mimikatz.exe 
-wget -O https://github.com/caday00/mimikatz2.1.1/raw/master/mimikatz_trunk.zip
+wget -O /home/kali/server/old_mimikatz_trunk.zip https://github.com/caday00/mimikatz2.1.1/raw/master/mimikatz_trunk.zip
 
 # PEASS - Privesc Tools
 wget https://github.com/carlospolop/PEASS-ng/releases/download/20231112-0a42c550/linpeas.sh 
 wget https://github.com/carlospolop/PEASS-ng/releases/download/20231112-0a42c550/winPEAS.bat 
 wget https://github.com/carlospolop/PEASS-ng/releases/download/20231112-0a42c550/winPEASany.exe 
 wget https://github.com/carlospolop/PEASS-ng/releases/download/20231112-0a42c550/winPEASx64.exe 
+git clone https://github.com/61106960/adPEAS /home/kali/server/adPEAS
 
 # Exploit Suggester for Linux and Windows
-git clone https://github.com/The-Z-Labs/linux-exploit-suggester
+git clone https://github.com/The-Z-Labs/linux-exploit-suggester 
 git clone https://github.com/AonCyberLabs/Windows-Exploit-Suggester
+
+# WES NG - Windows Exploit Suggester Next Gen
+git clone https://github.com/bitsadmin/wesng 
 
 # AccessChk Download - you might have to download the older version that accepts eula from command line here: https://xor.cat/assets/other/Accesschk.zip
 wget https://download.sysinternals.com/files/AccessChk.zip 
@@ -273,10 +290,13 @@ wget https://github.com/SnaffCon/Snaffler/releases/download/1.0.126/Snaffler.exe
 wget https://github.com/AlessandroZ/LaZagne/releases/download/v2.4.5/LaZagne.exe 
 
 # Rubeus - Repo but no binaries
-git clone https://github.com/GhostPack/Rubeus.git
+git clone https://github.com/GhostPack/Rubeus.git 
 
 # Rubeus - Binary download
 wget https://github.com/Z333RO/security-tools-public/raw/main/odds_ends/Rubeus.exe 
+
+# DONPAPI - Dump DPAPI creds remotely and bypass AV
+git clone git+https://github.com/login-securite/DonPAPI.git 
 
 
 # PIVOTING
@@ -288,23 +308,45 @@ wget https://github.com/jpillora/chisel/releases/download/v1.8.1/chisel_1.8.1_li
 wget https://github.com/jpillora/chisel/releases/download/v1.9.1/chisel_1.9.1_linux_amd64.gz 
 wget https://github.com/jpillora/chisel/releases/download/v1.9.1/chisel_1.9.1_windows_amd64.gz 
 
-
-
 # CRACKING
 # AutoNTDS - dumps NTDS and cracks with hashcat 
-git clone https://github.com/hmaverickadams/autoNTDS 
+git clone https://github.com/hmaverickadams/autoNTDS /home/kali/tools/autoNTDS
 
 # EVASION
 # powershell command obfuscator
-git clone https://github.com/danielbohannon/Invoke-Obfuscation 
+git clone https://github.com/danielbohannon/Invoke-Obfuscation
 
 # PowerLess Shell - a way to bypass powershell restrictions by executing powershell scripts without powershell
-git clone https://github.com/Mr-Un1k0d3r/PowerLessShell 
+git clone https://github.com/Mr-Un1k0d3r/PowerLessShell
+
+
+# Blue Team - Monitoring and Forensics
+# NSA Cyber Tool for Monitoring and Forensics of ICS/SCADA environments
+wget https://github.com/nsacyber/GRASSMARLIN/releases/download/v3.2.1/grassmarlin_3.2.1.kali-1_amd64.deb 
+
+# Network Miner - Network Forensics Tool using pcap files (wireshark on roids)
+# See the 2nd script for install of mono
+wget https://www.netresec.com/?download=NetworkMiner -O /home/kali/tools/nm.zip
+# Run the following commands to get this setup
+# sudo apt install mono-devel 
+# sudo unzip /home/kali/tools/nm.zip
+# cd /home/kali/tools/NetworkMiner*
+# sudo chmod +x NetworkMiner.exe
+# sudo chmod -R go+w AssembledFiles/
+# sudo chmod -R go+w Captures/
+# mono NetworkMiner.exe --noupdatecheck 
+
+# Squil - Snort Logs Analysis
+wget https://github.com/bammv/sguil/releases/download/v0.9.0/sguil-client-0.9.0-osx.bin
+
 
 # MISC
 
 # Parse through dehashed data using its API
 git clone https://github.com/hmaverickadams/DeHashed-API-Tool 
+
+# data exfiltration tool - mask the traffic when you exfiltrate data:
+git clone https://github.com/TryCatchHCF/PacketWhisper 
 
 # Project Management and Report Writing with Ghostwriter
 git clone https://github.com/GhostManager/Ghostwriter.git 
@@ -321,67 +363,3 @@ git clone https://github.com/ameenmaali/wordlistgen
 # Create alias for arsenal toolkit - type 'a' to run on zsh:
 # alias a='arsenal'
 echo "alias a='arsenal'" >> ~/.zshrc
-
-# Function to install packages with default "yes" answer
-install_package() {
-    apt-get install -y "$1"
-}
-
-apt-get update -y
-apt-get upgrade -y
-
-install_package nuclei
-install_package seclists
-install_package gedit
-install_package tor
-install_package rlwrap
-install_package eyewitness
-install_package bloodhound
-install_package trufflehog
-install_package dirsearch
-install_package keepass2
-install_package knockd
-install_package subfinder
-install_package docker.io
-install_package chisel
-install_package dnsrecon
-install_package feroxbuster
-install_package gobuster
-install_package nbtscan
-install_package onesixtyone 
-install_package oscanner 
-install_package redis-tools
-install_package svwar
-install_package tnscmd10g
-install_package whatweb
-install_package wkhtmltopdf
-install_package zaproxy
-install_package hexedit
-install_package skipfish
-install_package code
-
-dpkg -i /home/kali/tools/rustscan_2.0.1_amd64.deb
-
-searchsploit -u
-
-# windows-exploit-suggester setup and dependencies install - install pip2 on kali machine
-wget https://bootstrap.pypa.io/pip/2.7/get-pip.py
-python2 get-pip.py
-rm get-pip.py
-pip2 install xlrd==1.2.0
-# Go into the windows exploit suggester folder and run the following to setup exploit-suggester
-# python2 windows-exploit-suggester.py --update
-
-# pip3 install pycrypto
-pip install pycryptodome
-
-# install wapiti if not on kali
-pip3 install wapiti3
-
-# arsenal - cheatsheet tool
-python3 -m pip install arsenal-cli
-# This fixes an error we have when we run arsenal
-sysctl -w dev.tty.legacy_tiocsti=1
-
-updatedb
-

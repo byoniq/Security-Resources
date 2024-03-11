@@ -43,7 +43,7 @@ install_package commix
 install_package libreoffice
 install_package spray
 install_package ntpdate
-
+install_package guake
 searchsploit -u
 
 # windows-exploit-suggester setup and dependencies install - install pip2 on kali machine

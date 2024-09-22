@@ -87,6 +87,7 @@ REPOS=(
   "https://github.com/r0oth3x49/ghauri /home/kali/tools/ghauri"
   "https://github.com/fin3ss3g0d/evilgophish /home/kali/tools/evilgophish"
   "https://github.com/kgretzky/evilginx2 /home/kali/tools/evilginx2"
+  "https://github.com/Pennyw0rth/NetExec /home/kali/tools/netexec"
 )
 
 for repo in "${REPOS[@]}"; do

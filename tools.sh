@@ -89,7 +89,15 @@ REPOS=(
   "https://github.com/kgretzky/evilginx2 /home/kali/tools/evilginx2"
   "https://github.com/Pennyw0rth/NetExec /home/kali/tools/netexec"
   "https://github.com/lanmaster53/recon-ng.git /home/kali/tools/recon-ng"
-)
+  "https://github.com/r3curs1v3-pr0xy/sub404.git /home/kali/tools/sub404"
+  "https://github.com/aws/aws-cli.git /home/kali//tools/aws-cli"
+  "https://github.com/yassineaboukir/Asnlookup.git /home/kali/tools/asnlookup"
+  "https://github.com/j3ssie/metabigor.git /home/kali/tools/meabigor"
+  "https://github.com/initstring/cloud_enum.git /home/kali/tools/cloud-enum"
+  "https://github.com/hahwul/dalfox.git /home/kali/tools/dalfox"
+  "https://github.com/RhinoSecurityLabs/pacu.git /home/kali/tools/pacu"
+  "https://github.com/robertdavidgraham/masscan.git /home/kali/tools/masscan"
+  )
 
 for repo in "${REPOS[@]}"; do
   repo_url=$(echo "$repo" | awk '{print $1}')

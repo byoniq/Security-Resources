@@ -34,7 +34,7 @@ PACKAGES=(
   dirsearch keepass2 knockd subfinder docker.io chisel dnsrecon feroxbuster
   gobuster nbtscan onesixtyone oscanner redis-tools svwar tnscmd10g
   whatweb wkhtmltopdf zaproxy hexedit skipfish code commix libreoffice
-  spray ntpdate golang-go code-oss osrframework
+  spray ntpdate golang-go code-oss osrframework sublist3r
 )
 
 for package in "${PACKAGES[@]}"; do

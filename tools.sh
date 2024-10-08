@@ -34,7 +34,7 @@ PACKAGES=(
   dirsearch keepass2 knockd subfinder docker.io chisel dnsrecon feroxbuster
   gobuster nbtscan onesixtyone oscanner redis-tools svwar tnscmd10g
   whatweb wkhtmltopdf zaproxy hexedit skipfish code commix libreoffice
-  spray ntpdate golang-go code-oss osrframework sublist3r
+  spray ntpdate golang-go code-oss osrframework sublist3r guake
 )
 
 for package in "${PACKAGES[@]}"; do
@@ -90,7 +90,7 @@ REPOS=(
   "https://github.com/Pennyw0rth/NetExec /home/kali/tools/netexec"
   "https://github.com/lanmaster53/recon-ng.git /home/kali/tools/recon-ng"
   "https://github.com/r3curs1v3-pr0xy/sub404.git /home/kali/tools/sub404"
-  "https://github.com/aws/aws-cli.git /home/kali//tools/aws-cli"
+  "https://github.com/aws/aws-cli.git /home/kali/tools/aws-cli"
   "https://github.com/yassineaboukir/Asnlookup.git /home/kali/tools/asnlookup"
   "https://github.com/j3ssie/metabigor.git /home/kali/tools/meabigor"
   "https://github.com/initstring/cloud_enum.git /home/kali/tools/cloud-enum"

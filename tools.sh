@@ -119,6 +119,63 @@ wget -q --show-progress -P /home/kali/server https://raw.githubusercontent.com/P
 wget -q --show-progress -P /home/kali/server https://github.com/tevora-threat/SharpView/raw/master/Compiled/SharpView.exe
 wget -q --show-progress -P /home/kali/tools https://github.com/projectdiscovery/katana/releases/download/v1.0.4/katana_1.0.4_linux_amd64.zip
 
+# =====================================================================
+# AI-ENABLED SECURITY TOOLING (added 2026-06-30)
+# Modern AI/LLM-assisted offensive tooling + GenAI red-team frameworks.
+# Installed with pipx/venv to stay PEP-668-safe on current Kali.
+# =====================================================================
+echo "Installing AI-enabled security tooling..."
+
+# --- Prerequisites -----------------------------------------------------
+# Node.js + npm (Shannon, promptfoo) and pipx (isolated Python CLI tools)
+install_package nodejs
+install_package npm
+install_package pipx
+pipx ensurepath || true
+export PATH="$PATH:/root/.local/bin:/usr/local/bin"
+
+# --- ProjectDiscovery AI suite (nuclei -ai, subfinder, httpx, katana...) -
+# pdtm = ProjectDiscovery Tool Manager; -ia installs/updates the full suite.
+# Needs Go 1.21+ (golang-go above). Nuclei AI template generation requires a
+# PDCP key: `export PDCP_API_KEY=...` then `nuclei -auth`
+# (free key: https://cloud.projectdiscovery.io).
+echo "Installing ProjectDiscovery tool manager + suite..."
+GOBIN=/usr/local/bin go install -v github.com/projectdiscovery/pdtm/cmd/pdtm@latest
+pdtm -ia || echo "pdtm install-all failed — check Go version (needs 1.21+)."
+
+# --- AI pentest orchestration / agent frameworks -----------------------
+# HexStrike AI — MCP server exposing 150+ security tools to AI agents.
+if [ ! -d /home/kali/tools/hexstrike-ai ]; then
+  echo "Installing HexStrike AI..."
+  git clone https://github.com/0x4m4/hexstrike-ai /home/kali/tools/hexstrike-ai
+  python3 -m venv /home/kali/tools/hexstrike-ai/hexstrike-env
+  /home/kali/tools/hexstrike-ai/hexstrike-env/bin/pip install -r /home/kali/tools/hexstrike-ai/requirements.txt
+else
+  echo "HexStrike AI already exists."
+fi
+
+# CAI (Cybersecurity AI) — AI agent framework for offensive/defensive testing.
+pipx install cai-framework
+
+# Shannon — AI-driven web/app pentest framework (run: npx @keygraph/shannon).
+npm install -g @keygraph/shannon
+
+# --- GenAI / LLM red-team & vulnerability tooling ----------------------
+# garak — NVIDIA LLM vuln scanner (prompt injection, jailbreak, data leak).
+pipx install garak
+# PyRIT — Microsoft Python Risk Identification Tool for generative AI.
+pipx install pyrit
+# Vulnhuntr — LLM-driven remotely-exploitable vuln discovery (requires py3.10).
+pipx install git+https://github.com/protectai/vulnhuntr.git --python python3.10 \
+  || echo "Vulnhuntr needs python3.10 on PATH — install it then re-run."
+# promptfoo — LLM eval & red-teaming harness (npm).
+npm install -g promptfoo
+
+# --- Personal AI security tooling (byoniq — private, needs gh auth) ----
+# Uncomment after `gh auth switch --user byoniq`:
+# git clone https://github.com/byoniq/exhume.git /home/kali/tools/exhume   # passive CVE/exploit discovery
+# git clone https://github.com/byoniq/ceasar.git /home/kali/tools/ceasar   # GHDB foothold scanner
+
 # Update the database
 echo "Updating the file database..."
 updatedb

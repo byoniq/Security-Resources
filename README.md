@@ -64,6 +64,7 @@ A curated collection of tools, scripts, and cheat sheets for penetration testing
 - [**gau**](https://github.com/lc/gau) - Fetch known URLs from Wayback Machine, OTX, and URLScan.
 
 ### Scanning & Exploitation
+- [Darkmoon](https://github.com/ASCIT31/Dark-Moon) - Open source (GPLv3) autonomous AI penetration testing platform: 50+ offensive tools across web, cloud, AD and Kubernetes, self-hosted, the model never receives your real IPs or credentials.
 - [**Nuclei**](https://github.com/projectdiscovery/nuclei) - Template-based vulnerability scanner with 9,000+ community templates.
 - [**SQLMap**](https://github.com/sqlmapproject/sqlmap) - Automated SQL injection detection and exploitation.
 - [**Dalfox**](https://github.com/hahwul/dalfox) - XSS parameter analysis and automated scanning.
